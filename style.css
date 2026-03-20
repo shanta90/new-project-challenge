@@ -332,7 +332,7 @@ body {
     /* Scroll-Driven Zoom In & Out */
     animation: image-zoom-cycle linear forwards;
     animation-timeline: --story-reveal;
-    animation-range: entry -0% exit 80%;
+    animation-range: entry -0% exit 100%;
 }
 
 .story-image img {
