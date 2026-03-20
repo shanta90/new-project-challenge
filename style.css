@@ -338,7 +338,7 @@ body {
 .story-image img {
     width: 100%;
     display: block;
-    transition: 1s cubic-bezier(0.1, 0, 0, 1);
+    transition: 0.5s cubic-bezier(0.1, 0, 0, 1);
 }
 
 @keyframes image-zoom-cycle {
