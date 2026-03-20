@@ -1101,3 +1101,223 @@ body {
 .close-modal-btn:hover {
     transform: scale(1.1) rotate(90deg);
 }
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* TABLET & MOBILE ADJUSTMENTS (Large Tablets) */
+@media (max-width: 1024px) {
+    .brand-container h1 {
+        font-size: 6rem;
+        letter-spacing: 15px;
+    }
+
+    .banner .product {
+        width: 400px;
+        height: 400px;
+    }
+
+    .story-block {
+        gap: 4vw;
+    }
+
+    .section-title {
+        font-size: 4rem;
+    }
+}
+
+/* MOBILE LANDSCAPE & SMALL TABLETS */
+@media (max-width: 768px) {
+    /* Navigation Adjustments */
+    .main-nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger {
+        width: 24px;
+        height: 2px;
+        background: var(--text-primary);
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: var(--text-primary);
+        left: 0;
+        transition: 0.3s;
+    }
+
+    .hamburger::before { top: -8px; }
+    .hamburger::after { bottom: -8px; }
+
+    .mobile-nav-toggle.active .hamburger {
+        background: transparent;
+    }
+
+    .mobile-nav-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .mobile-nav-toggle.active .hamburger::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+        border-left: 1px solid var(--card-border);
+    }
+
+    .nav-links.mobile-active {
+        right: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    /* Hero Section */
+    .brand-container h1 {
+        font-size: 4rem;
+        letter-spacing: 10px;
+    }
+
+    .brand-container p {
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+    }
+
+    .banner .product {
+        width: 320px;
+        height: 320px;
+        bottom: 100px;
+    }
+
+    .banner .product .soda {
+        width: 180px;
+    }
+
+    /* Story Section stacking */
+    .story-section {
+        padding: 10vh 5vw;
+        gap: 15vh;
+    }
+
+    .story-block, .story-block.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .story-text h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Collections/Grids */
+    .section-title {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+
+    .collections-grid, .wellness-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Video Showcase */
+    .video-showcase {
+        height: 100vh;
+        margin: 100px 0;
+    }
+
+    .video-showcase h2 {
+        font-size: 3rem;
+        letter-spacing: 10px;
+    }
+
+    /* Journey Section */
+    .journey-timeline {
+        padding-left: 30px;
+    }
+
+    .step-content h4 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .newsletter-input {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* SMALL MOBILE DEVICES */
+@media (max-width: 480px) {
+    .brand-container h1 {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+
+    .banner .product {
+        width: 260px;
+        height: 260px;
+    }
+
+    .banner .product .soda {
+        width: 150px;
+    }
+
+    .gallery-scroll-container {
+        gap: 1.5rem;
+    }
+
+    .gallery-card {
+        width: 260px;
+    }
+
+    .close-modal-btn {
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+    }
+}

@@ -33,6 +33,9 @@
     <!-- Navigation: hidden by default, slides in when story section hits top -->
     <nav class="main-nav" id="mainNav">
         <div class="nav-brand">Bengal Brew</div>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Mobile Menu">
+            <span class="hamburger"></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#story">Story</a></li>
             <li><a href="#variations">Variations</a></li>
@@ -487,12 +490,21 @@
         });
 
         // Close when clicking outside the video content area
-        videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) {
-                videoModal.classList.remove('active');
-                modalVideo.pause();
-                modalVideo.currentTime = 0;
-            }
+        // --- Mobile Nav Toggle ---
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navLinksList = document.querySelector('.nav-links');
+
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNavToggle.classList.toggle('active');
+            navLinksList.classList.toggle('mobile-active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavToggle.classList.remove('active');
+                navLinksList.classList.remove('mobile-active');
+            });
         });
     </script>
 </body>
